@@ -111,5 +111,37 @@ namespace Kitaplık_Proje
             baglanti.Close();
             MessageBox.Show("Güncelleme İşlemi Gerçekleşti !!!");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            OleDbCommand komut = new OleDbCommand(" select * from kitaplar where kitapad=@p1  ", baglanti);
+            komut.Parameters.AddWithValue("@p1", txtKitapBul.Text);
+            DataTable dt = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(komut);//eger sql komutunda şart (where) varsa onu buraya yazıp datagrit içerisine sadece istediğimiz şarttaki satırların yazılmasını sağlıyoruz
+
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+
+
+
+            
+        }
+
+        private void txtKitapBul_TextChanged(object sender, EventArgs e)
+        {
+            
+            OleDbCommand komut = new OleDbCommand(" select * from kitaplar where kitapad like '%"+txtKitapBul.Text+"%' ", baglanti);
+            komut.Parameters.AddWithValue(txtKitapBul.Text, txtKitapBul.Text);
+
+    
+            DataTable dt = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(komut);//eger sql komutunda şart (where) varsa onu buraya yazıp datagrit içerisine sadece istediğimiz şarttaki satırların yazılmasını sağlıyoruz
+
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+        }
     }
 }

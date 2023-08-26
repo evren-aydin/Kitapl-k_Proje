@@ -49,6 +49,8 @@ namespace Kitaplık_Proje
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGüncelle = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtKitapBul = new System.Windows.Forms.TextBox();
+            this.btnBul = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -233,10 +235,29 @@ namespace Kitaplık_Proje
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(446, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 217);
+            this.pictureBox1.Size = new System.Drawing.Size(250, 176);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
+            // 
+            // txtKitapBul
+            // 
+            this.txtKitapBul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtKitapBul.Location = new System.Drawing.Point(457, 219);
+            this.txtKitapBul.Name = "txtKitapBul";
+            this.txtKitapBul.Size = new System.Drawing.Size(162, 27);
+            this.txtKitapBul.TabIndex = 20;
+            this.txtKitapBul.TextChanged += new System.EventHandler(this.txtKitapBul_TextChanged);
+            // 
+            // btnBul
+            // 
+            this.btnBul.Location = new System.Drawing.Point(625, 216);
+            this.btnBul.Name = "btnBul";
+            this.btnBul.Size = new System.Drawing.Size(67, 35);
+            this.btnBul.TabIndex = 21;
+            this.btnBul.Text = "Bul";
+            this.btnBul.UseVisualStyleBackColor = true;
+            this.btnBul.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -244,6 +265,8 @@ namespace Kitaplık_Proje
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(708, 487);
+            this.Controls.Add(this.btnBul);
+            this.Controls.Add(this.txtKitapBul);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGüncelle);
             this.Controls.Add(this.btnSil);
@@ -296,6 +319,8 @@ namespace Kitaplık_Proje
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGüncelle;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtKitapBul;
+        private System.Windows.Forms.Button btnBul;
     }
 }
 
